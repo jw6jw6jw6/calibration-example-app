@@ -8,6 +8,12 @@ public class MainClass {
         printNumWheels(motorcycle);
 
         recursionExample(0);
+
+        try {
+            errorTest();
+        } catch (RuntimeException e) {
+            System.out.println("Caught Exception: "+e.getLocalizedMessage());
+        }
     }
 
     public static void printNumWheels(Vehicle vehicle) {
@@ -18,5 +24,9 @@ public class MainClass {
         System.out.println(a);
         if(a<10)
             recursionExample(a+1);
+    }
+
+    public static void errorTest() throws RuntimeException {
+        throw new RuntimeException("Exception Test");
     }
 }
